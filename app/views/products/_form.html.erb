@@ -1,0 +1,97 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Hauptartikelnr %>
+    <%= form.text_field :Hauptartikelnr %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Artikelname %>
+    <%= form.text_field :Artikelname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hersteller %>
+    <%= form.text_field :Hersteller %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Beschreibung %>
+    <%= form.text_area :Beschreibung %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Materialangaben %>
+    <%= form.text_area :Materialangaben %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Geschlecht %>
+    <%= form.text_field :Geschlecht %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Produktart %>
+    <%= form.text_field :Produktart %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Ärmel %>
+    <%= form.text_field :Ärmel %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Bein %>
+    <%= form.text_field :Bein %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Kragen %>
+    <%= form.text_field :Kragen %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Herstellung %>
+    <%= form.text_field :Herstellung %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Taschenart %>
+    <%= form.text_field :Taschenart %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Grammatur %>
+    <%= form.text_field :Grammatur %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Material %>
+    <%= form.text_field :Material %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Ursprungsland %>
+    <%= form.text_field :Ursprungsland %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Bildname %>
+    <%= form.text_field :Bildname %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Hauptartikelnr: MyString
+  Artikelname: MyString
+  Hersteller: MyString
+  Beschreibung: MyText
+  Materialangaben: MyText
+  Geschlecht: MyString
+  Produktart: MyString
+  Ärmel: MyString
+  Bein: MyString
+  Kragen: MyString
+  Herstellung: MyString
+  Taschenart: MyString
+  Grammatur: MyString
+  Material: MyString
+  Ursprungsland: MyString
+  Bildname: MyString
+
+two:
+  Hauptartikelnr: MyString
+  Artikelname: MyString
+  Hersteller: MyString
+  Beschreibung: MyText
+  Materialangaben: MyText
+  Geschlecht: MyString
+  Produktart: MyString
+  Ärmel: MyString
+  Bein: MyString
+  Kragen: MyString
+  Herstellung: MyString
+  Taschenart: MyString
+  Grammatur: MyString
+  Material: MyString
+  Ursprungsland: MyString
+  Bildname: MyString

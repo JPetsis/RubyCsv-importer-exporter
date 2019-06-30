@@ -1,0 +1,77 @@
+<p id="notice"><%= notice %></p>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container title">
+    <h1 class="display-4">Products</h1>
+  </div>
+</div>
+
+<%= form_tag import_products_path, multipart: true, class: 'form-inline' do %>
+  <div class="form-group">
+    <%= link_to "Export CSV", products_path(format: "csv"), class: 'btn btn-primary' %>
+  </div>
+
+  <div class="form-group">
+    <%= file_field_tag :file, class: '' %>
+  </div>
+  
+  <div class="form-group">
+    <%= submit_tag "Import CSV", class: 'btn btn-info' %>
+  </div>
+<% end %>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>hauptartikelnr</th>
+        <th>artikelname</th>
+        <th>hersteller</th>
+        <th>beschreibung</th>
+        <th>materialangaben</th>
+        <th>geschlecht</th>
+        <th>produktart</th>
+        <th>aermel</th>
+        <th>bein</th>
+        <th>kragen</th>
+        <th>herstellung</th>
+        <th>taschenart</th>
+        <th>grammatur</th>
+        <th>material</th>
+        <th>ursprungsland</th>
+        <th>bildname</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.hauptartikelnr %></td>
+          <td><%= product.artikelname %></td>
+          <td><%= product.hersteller %></td>
+          <td><%= product.beschreibung %></td>
+          <td><%= product.materialangaben %></td>
+          <td><%= product.geschlecht %></td>
+          <td><%= product.produktart %></td>
+          <td><%= product.aermel %></td>
+          <td><%= product.bein %></td>
+          <td><%= product.kragen %></td>
+          <td><%= product.herstellung %></td>
+          <td><%= product.taschenart %></td>
+          <td><%= product.grammatur %></td>
+          <td><%= product.material %></td>
+          <td><%= product.ursprungsland %></td>
+          <td><%= product.bildname %></td>
+          <td><%= link_to 'Show', product %></td>
+          <td><%= link_to 'Edit', edit_product_path(product) %></td>
+          <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>
