@@ -13,6 +13,7 @@ class Product < ApplicationRecord
     CSV.foreach(file.path, headers: true) do |row|
       product_hash = row.to_hash
       product = find_or_create_by!(
+        hauptartikelnr: product_hash['hauptartikelnr'],
         artikelname: product_hash['artikelname'],
         hersteller: product_hash['hersteller'],
         beschreibung: product_hash['beschreibung'],
@@ -29,6 +30,7 @@ class Product < ApplicationRecord
         ursprungsland: product_hash['ursprungsland'],
         bildname: product_hash['bildname']
       )
+      product.update_attributes(product_hash)
     end
   end
 end
